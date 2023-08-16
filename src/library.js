@@ -9,9 +9,19 @@ function createLibrary(libName) {
   }
 }
 
+function addBook(library, book) {
+  if (book.genre === 'fantasy') {
+    library.shelves.fantasy.push(book);
+  } else if (book.genre === 'fiction') {
+    library.shelves.fantasy.push(book);
+  } else if (book.genre === 'nonFiction') {
+    library.shelves.fantasy.push(book);
+  }
+}
+
 module.exports = {
   createLibrary,
-  // addBook,
+  addBook,
   // checkoutBook,
   // takeStock
 };
