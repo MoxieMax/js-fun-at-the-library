@@ -1,7 +1,16 @@
-
+function createLibrary(libName) {
+  return library = {
+    name: libName,
+    shelves: {
+      fantasy: [],
+      fiction: [],
+      nonFiction: []
+    }
+  }
+}
 
 module.exports = {
-  // createLibrary,
+  createLibrary,
   // addBook,
   // checkoutBook,
   // takeStock
