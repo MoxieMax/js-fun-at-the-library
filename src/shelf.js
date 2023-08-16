@@ -14,13 +14,28 @@ function unshelfBook(bookTitle, shelfArray) {
   }
 }
 
-function listTitles() {
-  
+function listTitles(shelfArray) {
+  let arrayLength = shelfArray.length;
+  let titles = "";
+
+  for (let i = 0; i < arrayLength; i++) {
+    titles += shelfArray[i].title;
+    if (i !== arrayLength - 1) {
+      titles += ", ";
+    }
+  }
+
+  return titles;
+}
+
+function searchShelf(shelfArray, bookTitle) {
+  var bookIndex = shelfArray.findIndex(book => book.title === bookTitle);
+  return bookIndex !== -1;
 }
 
 module.exports = {
   shelfBook,
   unshelfBook,
   listTitles,
-  // searchShelf
+  searchShelf
 };
