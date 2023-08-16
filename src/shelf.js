@@ -6,8 +6,12 @@ function shelfBook(book, shelfArray) {
   // shelfArray.unshift(book);
 }
 
-function unshelfBook() {
+function unshelfBook(bookTitle, shelfArray) {
+  var bookIndex = shelfArray.findIndex(book => book.title === bookTitle);
   
+  if (bookIndex !== -1) {
+    shelfArray.splice(bookIndex, 1);
+  }
 }
 
 module.exports = {
