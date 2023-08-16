@@ -6,9 +6,13 @@ function shelfBook(book, shelfArray) {
   // shelfArray.unshift(book);
 }
 
+function unshelfBook() {
+  
+}
+
 module.exports = {
   shelfBook,
-  // unshelfBook,
+  unshelfBook,
   // listTitles,
   // searchShelf
 };
