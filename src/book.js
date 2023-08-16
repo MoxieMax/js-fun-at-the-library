@@ -8,16 +8,18 @@ function buildMainCharacter(name, age, pronouns) {
     age: age,
     pronouns: pronouns
   }
-  // var dictionary = {
-  //   name: "Webster's",
-  //   hasThesaurus: false
-  // };
+}
+
+function saveReview(review, reviewsArray) {
+  if (!reviewsArray.includes(review)) {
+    reviewsArray.push(review);
+  }
 }
 
 module.exports = {
   createTitle,
   buildMainCharacter,
-  // saveReview,
+  saveReview,
   // calculatePageCount,
   // writeBook,
   // editBook
