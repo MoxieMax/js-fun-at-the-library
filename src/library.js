@@ -18,16 +18,19 @@ function addBook(library, book) {
   }
 }
 
+function checkoutBook(library, book) {
+  
+}
 
 module.exports = {
   createLibrary,
   addBook,
-  // checkoutBook,
+  checkoutBook,
   // takeStock
 };
 
 
-// 
+//  // original addBook function
 // function addBook(library, book) {
 //   if (book.genre === 'fantasy') {
 //     library.shelves.fantasy.push(book);
