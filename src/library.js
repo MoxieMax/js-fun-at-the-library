@@ -38,13 +38,36 @@ function checkoutBook(library, bookTitle) {
   return `Sorry, there are currently no copies of ${bookTitle} available at the ${library.name}.`; // Book not found in any shelf
 }
 
-
+function takeStock(library, shelfType = 'all') {
+  if (shelfType === 'all') {
+    let totalBookCount = 0;
+    for (const genre in library.shelves) {
+      if (library.shelves.hasOwnProperty(genre)) {
+        totalBookCount += library.shelves[genre].length;
+      }
+    }
+    
+    return `There are a total of ${totalBookCount} books at the ${library.name}.`
+  } else if (library.shelves.hasOwnProperty(shelfType)) {
+    const shelf = library.shelves[shelfType];
+    const bookCount = shelf.length;
+    return `There are a total of ${bookCount} ${shelfType} books at the ${library.name}.`
+  } else {
+    `The ${shelfType} shelf does not exist at the ${library.name}.`
+  }
+  
+  // if (library.shelves.hasOwnProperty(shelfType)){
+  //   const shelf = library.shelves[shelfType];
+  //   const bookCount = shelf.length;
+  //   return `There are a total of ${bookCount} ${shelfType} books at the ${library.name}.`
+  // }
+}
 
 module.exports = {
   createLibrary,
   addBook,
   checkoutBook,
-  // takeStock
+  takeStock
 };
 
 
