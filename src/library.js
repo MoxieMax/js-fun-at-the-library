@@ -35,7 +35,7 @@ function checkoutBook(library, bookTitle) {
     }
   }
 
-  return false; // Book not found in any shelf
+  return `Sorry, there are currently no copies of ${bookTitle} available at the ${library.name}.`; // Book not found in any shelf
 }
 
 
